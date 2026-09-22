@@ -13,6 +13,9 @@ jobs:
       - name: Unzip project
         run: unzip -o RawCam.zip -d .
 
+      - name: Remove stray non-xml file
+        run: rm -f RawCam/app/src/main/res/values/ic_launcher_note.txt
+
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
