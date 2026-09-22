@@ -16,6 +16,9 @@ jobs:
       - name: Remove stray non-xml file
         run: rm -f RawCam/app/src/main/res/values/ic_launcher_note.txt
 
+      - name: Remove missing icon reference from manifest
+        run: sed -i '/android:icon="@mipmap\/ic_launcher"/d' RawCam/app/src/main/AndroidManifest.xml
+
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
